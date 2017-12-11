@@ -1,0 +1,30 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="br.gbizotto.pomodoro.timer.viewModel.TimerViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/timer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            style="@style/inactive_timer_style"
+            android:text="@={viewModel.timer}" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/button_margin"
+            android:src="@{viewModel.isRunning() ?  @drawable/ic_stop : @drawable/ic_play}"
+            android:onClick="@{() -> viewModel.onPlayStopClick()}" />
+
+    </RelativeLayout>
+</layout>

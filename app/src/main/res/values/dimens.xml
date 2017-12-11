@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Timer -->
+    <dimen name="timer_text_size">52sp</dimen>
+    <dimen name="button_margin">16dp</dimen>
+</resources>
