@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import br.gbizotto.pomodoro.R
-import br.gbizotto.pomodoro.history.HistoryFragment
+import br.gbizotto.pomodoro.history.view.HistoryFragment
 import br.gbizotto.pomodoro.timer.view.TimerFragment
 import butterknife.BindView
 import butterknife.ButterKnife

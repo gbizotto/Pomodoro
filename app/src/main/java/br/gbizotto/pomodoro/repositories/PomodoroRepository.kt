@@ -2,7 +2,6 @@ package br.gbizotto.pomodoro.repositories
 
 import br.gbizotto.pomodoro.model.Pomodoro
 import io.realm.Realm
-import io.realm.RealmObject
 
 /**
  * Created by Gabriela on 10/12/2017.
@@ -14,6 +13,12 @@ object PomodoroRepository  {
         val realm = Realm.getDefaultInstance()
         realm.executeTransaction { realm -> realm.insertOrUpdate(realm.copyToRealmOrUpdate<Pomodoro>(pomodoro)) }
         realm.close()
+    }
+
+    fun list() : List<Pomodoro> {
+        val realm = Realm.getDefaultInstance()
+        val query = realm.where(Pomodoro::class.java!!).sort("dateAdded")
+        return query.findAll()
     }
 
     private fun getNextId(pomodoro: Pomodoro): Int {

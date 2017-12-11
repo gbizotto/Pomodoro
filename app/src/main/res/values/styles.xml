@@ -22,5 +22,39 @@
         <item name="android:textColor">@color/title</item>
     </style>
 
+    <!-- History -->
+    <style name="history_list_style">
+        <item name="android:divider">@android:color/transparent</item>
+    </style>
+
+    <!-- History header -->
+    <style name="history_header">
+        <item name="android:textSize">@dimen/timer_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_marginTop">@dimen/history_header_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/history_header_margin_vertical</item>
+        <item name="android:layout_marginStart">@dimen/history_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/history_margin_horizontal</item>
+    </style>
+
+    <!-- History row -->
+    <style name="history_row_duration">
+        <item name="android:textSize">@dimen/history_duration_text_size</item>
+        <item name="android:textColor">@color/subtitle</item>
+        <item name="android:layout_marginStart">@dimen/history_margin_horizontal</item>
+    </style>
+
+    <style name="history_row_status_added">
+        <item name="android:textSize">@dimen/history_status_text_size</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:layout_marginStart">@dimen/history_margin_horizontal</item>
+    </style>
+
+    <style name="history_row_date_added">
+        <item name="android:textSize">@dimen/history_date_added_text_size</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:layout_marginEnd">@dimen/history_margin_horizontal</item>
+    </style>
 
 </resources>
