@@ -20,14 +20,14 @@ object DateUtils {
     }
 
     fun isToday(date: Date?) : Boolean {
-        var calendar = GregorianCalendar();
+        var calendar = GregorianCalendar()
         calendar.time = date
         var today = GregorianCalendar()
         return isSameDay(calendar, today) && isSameMonth(calendar, today) && isSameYear(calendar, today)
     }
 
     fun isYesterday(date: Date?) : Boolean {
-        var calendar = GregorianCalendar();
+        var calendar = GregorianCalendar()
         calendar.time = date
         var today = GregorianCalendar()
         today.add(Calendar.DAY_OF_MONTH, -1)

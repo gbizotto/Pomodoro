@@ -12,13 +12,13 @@ object PomodoroRepository  {
     fun insert(pomodoro: Pomodoro) {
         pomodoro.id = getNextId(pomodoro)
         val realm = Realm.getDefaultInstance()
-        realm.executeTransaction { realm -> realm.insertOrUpdate(realm.copyToRealmOrUpdate<Pomodoro>(pomodoro)) }
+        realm.executeTransaction { realm -> realm.insertOrUpdate(realm.copyToRealmOrUpdate(pomodoro)) }
         realm.close()
     }
 
     fun list() : List<Pomodoro> {
         val realm = Realm.getDefaultInstance()
-        val query = realm.where(Pomodoro::class.java!!).sort("dateAdded", Sort.DESCENDING)
+        val query = realm.where(Pomodoro::class.java).sort("dateAdded", Sort.DESCENDING)
         return query.findAll()
     }
 

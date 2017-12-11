@@ -18,6 +18,6 @@ class TimerFragment : Fragment() {
 
         var binding : FragmentTimerBinding = DataBindingUtil.inflate(inflater ,R.layout.fragment_timer,container , false)
         binding.viewModel = TimerViewModel(context)
-        return binding!!.root
+        return binding.root
     }
 }

@@ -18,7 +18,7 @@ import android.os.Vibrator
 
 class TimerViewModel(var context: Context) : BaseObservable() {
 
-    val maxTime = (1 * 60 * 1000).toLong()
+    val maxTime = (25 * 60 * 1000).toLong()
 
     var timer: ObservableField<String> = ObservableField(getDefaultTime())
     var isRunning: ObservableField<Boolean> = ObservableField(false)
