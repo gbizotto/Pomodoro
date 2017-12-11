@@ -10,7 +10,11 @@
     <string name="yesterday">Yesterday</string>
     <string name="minutes_ago"><xliff:g>%1$s</xliff:g>m ago</string>
     <string name="hour_ago"><xliff:g>%1$s</xliff:g>h ago</string>
-    <string name="empty_history">Seu histórico de Pomodoros está vazio</string>
+    <string name="empty_history">Your Pomodoro history is empty!</string>
+    <string name="status_finished">Finished</string>
+    <string name="status_stopped">Stopped</string>
 
-
+    <!-- Formatting-->
+    <string name="date_format">MM/dd/yyyy</string>
+    <string name="time_format">HH:mm</string>
 </resources>

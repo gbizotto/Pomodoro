@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <import type="android.view.View" />
         <variable
             name="viewModel"
             type="br.gbizotto.pomodoro.history.viewModel.HistoryItemViewModel"/>
@@ -15,8 +17,46 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="style/history_header_text_size"
-            android:text="@={viewModel.dateAddedLabel}"/>
+            style="@style/history_header"
+            tools:text="Today"
+            android:text="@={viewModel.dateAddedLabel}"
+            android:visibility="@{viewModel.isHeader() ?  View.VISIBLE : View.GONE}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isHeader() ?  View.GONE : View.VISIBLE}">
+
+            <LinearLayout
+                android:id="@+id/layout_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/history_row_duration"
+                    tools:text="25:00"
+                    android:text="@={viewModel.duration}"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/history_row_status"
+                    tools:text="Finished"
+                    android:text="@={viewModel.statusLabel }"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                style="@style/history_row_date_added"
+                tools:text="1min ago"
+                android:text="@={viewModel.endTime }"/>
+        </RelativeLayout>
 
     </LinearLayout>
 </layout>

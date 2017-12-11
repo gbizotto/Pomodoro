@@ -2,6 +2,7 @@ package br.gbizotto.pomodoro.repositories
 
 import br.gbizotto.pomodoro.model.Pomodoro
 import io.realm.Realm
+import io.realm.Sort
 
 /**
  * Created by Gabriela on 10/12/2017.
@@ -17,7 +18,7 @@ object PomodoroRepository  {
 
     fun list() : List<Pomodoro> {
         val realm = Realm.getDefaultInstance()
-        val query = realm.where(Pomodoro::class.java!!).sort("dateAdded")
+        val query = realm.where(Pomodoro::class.java!!).sort("dateAdded", Sort.DESCENDING)
         return query.findAll()
     }
 

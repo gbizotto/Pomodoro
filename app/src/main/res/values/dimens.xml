@@ -6,8 +6,8 @@
 
     <!-- History-->
     <dimen name="history_header_text_size">18sp</dimen>
-    <dimen name="history_header_margin_vertical">10dp</dimen>
-    <dimen name="history_margin_horizontal">5dp</dimen>
+    <dimen name="history_header_margin_vertical">20dp</dimen>
+    <dimen name="history_margin_horizontal">10dp</dimen>
     <dimen name="history_duration_text_size">24sp</dimen>
     <dimen name="history_date_added_text_size">18sp</dimen>
     <dimen name="history_status_text_size">14sp</dimen>

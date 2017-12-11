@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import android.util.Log
 import br.gbizotto.pomodoro.model.Pomodoro
 import br.gbizotto.pomodoro.repositories.PomodoroRepository
+import br.gbizotto.pomodoro.utils.DateUtils
 
 /**
  * Created by Gabriela on 10/12/2017.
@@ -32,14 +33,14 @@ class TimerViewModel : BaseObservable() {
     }
 
     private fun getDefaultTime() : String {
-        return "${getMinutes(maxTime)}:${getSeconds(maxTime)}"
+        return "${DateUtils.getMinutes(maxTime)}:${DateUtils.getSeconds(maxTime)}"
     }
 
     private fun startClock() {
         countDownTimer = object : CountDownTimer(maxTime, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
-                timer.set("${getMinutes(millisUntilFinished)}:${getSeconds(millisUntilFinished)}")
+                timer.set("${DateUtils.getMinutes(millisUntilFinished)}:${DateUtils.getSeconds(millisUntilFinished)}")
                 millisecondsLeft = millisUntilFinished
             }
 
@@ -58,24 +59,6 @@ class TimerViewModel : BaseObservable() {
         pomodoro.finished = finished
 
         PomodoroRepository.insert(pomodoro)
-    }
-
-    private fun getMinutes(milliseconds: Long): String {
-        var seconds = milliseconds / 1000
-        var minutes = (seconds / 60).toInt()
-        return format(minutes)
-    }
-
-    private fun getSeconds(milliseconds: Long) : String {
-        var seconds = milliseconds / 1000
-        return format(((seconds % 60)).toInt())
-    }
-
-    private fun format(time: Int) : String {
-        if (time>= 10) {
-            return time.toString()
-        }
-        return "0$time"
     }
 
     private fun stopClock() {

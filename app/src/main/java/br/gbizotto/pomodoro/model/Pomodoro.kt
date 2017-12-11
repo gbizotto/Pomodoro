@@ -15,4 +15,7 @@ open class Pomodoro: RealmObject() {
     var finished: Boolean = true
     var dateAdded: Date = Date()
 
+    override fun toString(): String {
+        return "Pomodoro(id=$id, duration=$duration, finished=$finished, dateAdded=$dateAdded)"
+    }
 }
