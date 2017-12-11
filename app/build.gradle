@@ -42,7 +42,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.4.0'
     kapt 'com.jakewharton:butterknife-compiler:8.4.0'
     kapt "com.android.databinding:compiler:3.0.1"
-    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.0.1"
 }
 
 kapt {

@@ -17,7 +17,7 @@ class TimerFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         var binding : FragmentTimerBinding = DataBindingUtil.inflate(inflater ,R.layout.fragment_timer,container , false)
-        binding.viewModel = TimerViewModel()
+        binding.viewModel = TimerViewModel(context)
         return binding!!.root
     }
 }
